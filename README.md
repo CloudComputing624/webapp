@@ -13,7 +13,6 @@
 - clone fork repo:  `git clone git@github.com:SindhuraBandaru99/webapp.git`
 
 - run  `npm install` to install packages
-
 - Once  node_modules is installed. create a .env file and add db details and port details.
 -   `DB_HOSTNAME = localhost`
 -   `DB_PASSWORD = Vani@1972`
