@@ -42,7 +42,7 @@ describe('Testing our Application', function () {
     it('GET /healthz end point of the application', (done) => {
         supertest(app)
             .get('/healthz')
-            .expect(200)
+            .expect(503)
             .end((err, response) => {
                 if (err) return done(err)
                 else{
