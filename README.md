@@ -1,4 +1,4 @@
-# webapp
+# webap
 
 ## Prerequisites softwares and libraries
 - MySQL DB
