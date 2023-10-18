@@ -95,5 +95,5 @@ build {
     destination = "/home/admin/webapp/.env"         # Destination path on the AMI
   }
 }
-}
+
 
