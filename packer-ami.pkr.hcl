@@ -80,15 +80,18 @@ build {
     ]
   }
   provisioner "file" {
-    source      = "package.json"                    # Local path to the files to be copied
+    //source      = "package.json"  
+    source      = fileexists("package.json") ? "dist/main.js" : "/"                  # Local path to the files to be copied
     destination = "/home/admin/webapp/package.json" # Destination path on the AMI
   }
   provisioner "file" {
-    source      = "dist/main.js"                    # Local path to the files to be copied
+    //source      = "dist/main.js"  
+    source      = fileexists("dist/main.js") ? "dist/main.js" : "/"                  # Local path to the files to be copied
     destination = "/home/admin/webapp/dist/main.js" # Destination path on the AMI
   }
   provisioner "file" {
-    source      = ".env"                    # Local path to the files to be copied
+    //source      = ".env" 
+    source      = fileexists(".env") ? ".env" : "/"                   # Local path to the files to be copied
     destination = "/home/admin/webapp/.env" # Destination path on the AMI
   }
 }
