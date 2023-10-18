@@ -24,6 +24,9 @@ jobs:
       - name: Initialize Packer Project
         run: packer init packer-ami.pkr.hcl
       - name: Format Packer Checks
-        run: packer fmt packer-ami.pkr.hcl
+        run: |
+          if ! packer fmt -check; then
+            packer fmt packer-ami.pkr.hcl
+          fi
       - name: Validate Packer Checks
         run: packer validate packer-ami.pkr.hcl
