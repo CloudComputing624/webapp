@@ -14,19 +14,16 @@ jobs:
           wget https://releases.hashicorp.com/packer/1.8.3/packer_1.8.3_linux_amd64.zip
           unzip packer_1.8.3_linux_amd64.zip
           sudo mv packer /usr/local/bin/
-        if: runner.os == 'Linux'
-      - name: Install Packer (macOS)
+      - name: Install Packer
         run: |
           brew install packer
-        if: runner.os == 'macOS'
       - name: Install packer plugins
         run: packer plugins install github.com/hashicorp/amazon
       - name: Initialize Packer Project
         run: packer init packer-ami.pkr.hcl
       - name: Format Packer Checks
         run: |
-          if ! packer fmt -check; then
-            packer fmt packer-ami.pkr.hcl
-          fi
-      - name: Validate Packer Checks
-        run: packer validate packer-ami.pkr.hcl
+          set -e
+          packer fmt -check packer-ami.pkr.hcl
+          packer validate packer-ami.pkr.hcl
+          echo "Validation and Packer Formatting Completed"

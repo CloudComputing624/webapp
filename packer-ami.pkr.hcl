@@ -79,20 +79,20 @@ build {
       "mkdir -p webapp/dist"
     ]
   }
-provisioner "file" {
+  provisioner "file" {
     //source      = "package.json"  
-    source      = fileexists("package.json") ? "package.json" : "/"                  # Local path to the files to be copied
-    destination = "/home/admin/webapp/package.json" # Destination path on the AMI
+    source      = fileexists("package.json") ? "package.json" : "/" # Local path to the files to be copied
+    destination = "/home/admin/webapp/package.json"                 # Destination path on the AMI
   }
-provisioner "file" {
+  provisioner "file" {
     //source      = "dist/main.js"  
-    source      = fileexists("dist/main.js") ? "dist/main.js" : "/"                  # Local path to the files to be copied
-    destination = "/home/admin/webapp/dist/main.js" # Destination path on the AMI
+    source      = fileexists("dist/main.js") ? "dist/main.js" : "/" # Local path to the files to be copied
+    destination = "/home/admin/webapp/dist/main.js"                 # Destination path on the AMI
   }
-provisioner "file" {
+  provisioner "file" {
     //source      = ".env" 
-    source      = fileexists(".env") ? ".env" : "/"                   # Local path to the files to be copied
-    destination = "/home/admin/webapp/.env" # Destination path on the AMI
+    source      = fileexists(".env") ? ".env" : "/" # Local path to the files to be copied
+    destination = "/home/admin/webapp/.env"         # Destination path on the AMI
   }
 }
 
