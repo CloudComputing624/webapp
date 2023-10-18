@@ -20,7 +20,7 @@ jobs:
           brew install packer
         if: runner.os == 'macOS'
       - name: Initialize Packer Project
-        run: packer init
+        run: packer init packer-ami.pkr.hcl
       - name: Format Packer Checks
         run: packer fmt packer-ami.pkr.hcl
       - name: Validate Packer Checks
