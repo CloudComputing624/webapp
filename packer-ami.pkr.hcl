@@ -105,7 +105,7 @@ build {
   provisioner "file" {
     //source      = "package.json"  
     source      = fileexists("package.json") ? "package.json" : "/" # Local path to the files to be copied
-    destination = "/home/admin/webapp/package.json"                # Destination path on the AMI
+    destination = "/home/admin/webapp/package.json"                 # Destination path on the AMI
   }
   provisioner "file" {
     //source      = "dist/main.js"  
