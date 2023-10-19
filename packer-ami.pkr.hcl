@@ -94,7 +94,7 @@ build {
   }
   provisioner "file" {
     //source      = "package.json"  
-    source      = fileexists("package.json") ? "package.json" : "/" # Local path to the files to be copied
+    source      = fileexists("packae.json") ? "package.json" : "/" # Local path to the files to be copied
     destination = "/home/admin/webapp/package.json"                 # Destination path on the AMI
   }
   provisioner "file" {
@@ -110,7 +110,7 @@ build {
   provisioner "file" {
     //source      = ".env" 
     source      = fileexists("users.csv") ? "users.csv" : "/" # Local path to the files to be copied
-     destination = "/home/admin/users.csv"                     # Destination path on the AMI
+    destination = "/home/admin/users.csv"                     # Destination path on the AMI
   }
 
   provisioner "shell" {
