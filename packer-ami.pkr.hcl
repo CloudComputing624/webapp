@@ -130,4 +130,3 @@ build {
       "npm install"
     ]
   }
-}
